@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #0d0d0d;
+  color: #33ff33;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.terminal {
+  max-width: 900px;
+  margin: auto;
+  background-color: #0d0d0d;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.prompt {
+  color: #33ff33;
+  margin-bottom: 10px;
+}
+
+.green {
+  color: #33ff33;
+}
+
+.blue {
+  color: #3399ff;
+}
+
+.content {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.blink {
+  display: inline-block;
+  animation: blink 1s steps(2, start) infinite;
+  color: #33ff33;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
