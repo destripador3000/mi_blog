@@ -1,34 +1,50 @@
+/* RESET BÁSICO */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY */
 body {
   margin: 0;
-  padding: 20px;
+  padding: clamp(10px, 3vw, 20px);
   background-color: #0d0d0d;
   color: #33ff33;
   font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(14px, 2.5vw, 16px);
 }
 
+/* LINKS */
 a {
   color: #00ffff;
   text-decoration: none;
+  word-break: break-word;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
+/* TERMINAL CONTENEDOR */
 .terminal {
+  width: 100%;
   max-width: 900px;
   margin: auto;
   background-color: #0d0d0d;
-  padding: 20px;
-  border-radius: 5px;
+  padding: clamp(12px, 3vw, 20px);
+  border-radius: 6px;
   box-shadow: 0 0 10px #00ff00;
+  overflow-x: auto;
 }
 
+/* PROMPT */
 .prompt {
   color: #33ff33;
   margin-bottom: 10px;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 
+/* COLORES */
 .green {
   color: #33ff33;
 }
@@ -37,11 +53,16 @@ a:hover {
   color: #3399ff;
 }
 
+/* CONTENIDO */
 .content {
   color: #ffffff;
   margin-bottom: 20px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
+/* EFECTO BLINK */
 .blink {
   display: inline-block;
   animation: blink 1s steps(2, start) infinite;
@@ -49,8 +70,29 @@ a:hover {
   font-weight: bold;
 }
 
+/* ANIMACIÓN */
 @keyframes blink {
   to {
     visibility: hidden;
+  }
+}
+
+/* 📱 MEDIA QUERY PARA MÓVILES */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .terminal {
+    padding: 12px;
+    box-shadow: 0 0 6px #00ff00;
+  }
+
+  .prompt {
+    font-size: 0.95rem;
+  }
+
+  .content {
+    font-size: 0.95rem;
   }
 }
