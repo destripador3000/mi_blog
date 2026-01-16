@@ -14,7 +14,7 @@ body {
 }
 
 /* LINKS */
-a {
+a{
   color: #00ffff;
   text-decoration: none;
   word-break: break-word;
@@ -95,4 +95,18 @@ a:hover {
   .content {
     font-size: 0.95rem;
   }
+}
+h2{
+  color: #33ff33;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.prompt img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
 }
