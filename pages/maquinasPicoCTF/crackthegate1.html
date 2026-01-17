@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terminal | Destripador3000</title>
+  <link rel="stylesheet" href="../../assets/css/style.css"/>
+</head>
+<body>
+  <div class="terminal">
+
+    <div class="prompt">
+      <a href="../ciberseguridad.html"><span class="green">destripador3000@PicoCTF</span></a>:<span class="blue">~</span>$echo CrackTheGate1
+
+      <h2>Máquina Crack The Gate 1</h2>  
+      <pre class="content">En este reto de PicoCTF se habla de un ingreso de manera indebida a una web. Solo nos dan un correo y tenemos que empezar a buscar los vectores para acceder a la máquina.</pre>
+      <img src="../../assets/img/picoctf/pico1.png" alt="Crack the gate imagen1">
+      <pre class="content">El primer vector hallado es un texto cifrado en ROT13 en el código fuente de la página.
+      </pre>
+      <img src="../../assets/img/picoctf/pico2.png" alt="Crack the gate imagen2">
+        <pre class="content">Se analiza la petición y respuesta de la máquina al momento de agregar algo al login y enviarlo. La respuesta es 401 de Unhatorized vemos en la respuesta también que el success devuelve un false. Por lo que se deduce que para obtener la bandera hay que cambiar el estado de success a True.</pre>
+      <img src="../../assets/img/picoctf/pico3.png" alt="Crack the gate imagen3">
+      <pre class="content">Al descifrar el texto en ROT13 se obtiene un bypass para poder acceder sin necesidad de contraseña. el header que hay que añadir para poder ingresar es: "X-Dev-Access: yes"</pre>
+      <img src="../../assets/img/picoctf/pico4.png" alt="Crack the gate imagen4">
+      <pre class="content">Al agregarlo y reenviar la solicitud el estado success cambia a true y con eso tendremos la flag y habremos acabado</pre>
+      <img src="../../assets/img/picoctf/pico5.png" alt="Crack the gate imagen5">
+      
+     
+
+    <a href="https://www.linkedin.com/feed/">Juan Esteban Valencia (Destripador3000)</a>
+     
+
+
+    </div>
+
+    <div class="content">
+     
+    </div>
+
+    <div class="prompt">
+     
+    </div>
+
+
+
+  </div>
+</body>
+</html>
