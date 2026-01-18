@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terminal | Destripador3000</title>
+  <link rel="stylesheet" href="../../assets/css/style.css"/>
+</head>
+<body>
+  <div class="terminal">
+
+    <div class="prompt">
+      <a href="../ciberseguridad.html"><span class="green">destripador3000@PicoCTF</span></a>:<span class="blue">~</span>$echo SSTI1
+
+      <h2>Máquina SSTI1</h2>  
+      <pre class="content">Laboratorio Sencillo de PicoCTF en el cual debemos y como su nombre lo indica se basa en la vulnerabilidad Server-Side Template Injection.</pre>
+      <img src="../../assets/img/picoctf/ssti1.png" alt="ssti1">
+      <pre class="content">Al ingresar algo en el campo de texto luego se puede evidenciar que la página devuelve lo escrito. Esto puede ser un indicio mas no es la confirmación de que la página sea vulnerable. Al ingresar algunos templates se puede confirmar esta vulnerabilidad. Por ejemplo si agregamos en el campo del input un template {{2*2}}. Template que corresponde a jinja2 tecnología usada por flask para manejar templates. Nos devolverá:
+      </pre>
+      <img src="../../assets/img/picoctf/ssti2.png" alt="ssti2">
+        <pre class="content">Para terminar de confirmar también podemos hacer {{2*'2'}} poniendo el segundo 2 en comillas para que el template lo interprete como cadena y esto devolverá:</pre>
+      <img src="../../assets/img/picoctf/ssti3.png" alt="ssti3">
+      <pre class="content">Confirmando la existencia de la vulnerabilidad busco en internet "injection ssti jinja2" para lo que me sale un payload en particular:
+{{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
+Este payload mostrará el id que tiene el usuario que esta escribiendo en los inputs. Para nuestra sorpresa tenemos el id de root lo que es una vulnerabilidad muy grande. Sabiendo esto cambiamos el "id" del payload y ponemos "ls" para listar lo que se encuentra en ese mismo directorio. Donde se encuentra la flag para leer la flag se hace "cat flag" y se obtiene.</pre>
+      <img src="../../assets/img/picoctf/ssti4.png" alt="ssti4">
+      <pre class="content">Esta es una máquina fácil pero muy interesante para practicar vulnerabilidades web como lo es el SSTI.</pre>
+      <img src="../../assets/img/picoctf/ssti5.png" alt="ssti5">
+      
+    <a href="https://www.linkedin.com/feed/">Juan Esteban Valencia (Destripador3000)</a>  
+    </div>
+    <div class="content">
+    </div>
+    <div class="prompt">
+ 
+    </div>
+
+  </div>
+</body>
+</html>
